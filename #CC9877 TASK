@@ -1,0 +1,47 @@
+#CC9877(SIMPLE TO-D0 LIST APP USING PYTHON)
+
+# Create a list to store the to-do items
+tasks = []
+
+# Add a new task to the list
+def add_task(task):
+    tasks.append(task)
+
+# Remove a task from the list
+def remove_task(task):
+    tasks.remove(task)
+
+# Mark a task as done
+def mark_done(task):
+    task["done"] = True
+
+# Print the to-do list
+def print_list():
+    for task in tasks:
+        status = "Done" if task["done"] else "Not Done"
+        print(f"{task['name']}: {status}")
+
+# Get user input
+def get_input():
+    choice = input("What would you like to do? (a)add, (b)remove, (c)mark done, (d)print, or (e)quit: ")
+    return choice
+
+# Main program loop
+while True:
+    choice = get_input()
+
+    if choice == "a":
+        task_name = input("Enter the name of the task: ")
+        add_task({"name": task_name, "done": False})
+    elif choice == "r":
+        task_name = input("Enter the name of the task to remove: ")
+        remove_task(task_name)
+    elif choice == "m":
+        task_name = input("Enter the name of the task to mark as done: ")
+        mark_done(task_name)
+    elif choice == "p":
+        print_list()
+    elif choice == "q":
+        break
+    else:
+        print("Invalid choice")
