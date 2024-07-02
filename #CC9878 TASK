@@ -1,4 +1,4 @@
-#CC9878(TYPING SPEED -CALCULATOR USING PHYTON)
+#CC9878(TYPING SPEED-CALCULATOR USING PYTHON)
 
 # importing all libraries
 from tkinter import *
